@@ -1,7 +1,9 @@
 # Corregir Lista por Dict() hecho
 # Usar metodo estatico calc_tax (probado)
 # Corregir salida redondeada. 
-# Testing
+# Test edges cases
+# mover round_up dentro de clase Register()
+
 from decimal import *
 import numpy as np
 
@@ -34,16 +36,15 @@ class Register():
         
     def __str__(self):
         return("Objeto de Tipo Registro")
-
-
-def round_up(valor):
-    valores = np.arange(0,1, 0.05).tolist()
-    valor = round(valor, 2)
-    for elemento in valores:
-        if valor == elemento:
-            return valor
-        if valor < elemento:
-            return (elemento)
+    
+    def round_up(valor):
+        valores = np.arange(0,1, 0.05).tolist()
+        valor = round(valor, 2)
+        for elemento in valores:
+            if valor == elemento:
+                return valor
+            if valor < elemento:
+                return (elemento)
 
 
 def sale_print(entrada):
