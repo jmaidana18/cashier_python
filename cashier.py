@@ -3,6 +3,7 @@
 # Corregir salida redondeada. 
 # Test edges cases
 # mover round_up dentro de clase Register()
+# Borrar comentarios basura
 
 from decimal import *
 import numpy as np
@@ -34,9 +35,6 @@ class Register():
         self.product = product
         self.line_total = Decimal(self.quantity) * Decimal(product.cal_tax())
         
-    def __str__(self):
-        return("Objeto de Tipo Registro")
-    
     def round_up(valor):
         valores = np.arange(0,1, 0.05).tolist()
         valor = round(valor, 2)
@@ -45,25 +43,22 @@ class Register():
                 return valor
             if valor < elemento:
                 return (elemento)
+        
+    def __str__(self):
+        return("Objeto de Tipo Registro")
 
 
 def sale_print(entrada):
     total_tax = 0
     suma_total = 0
     for item in entrada:
-#        print("Valor Prod", item.product.price)
-#        print("Valor Tax", item.line_total)
-#        print("Valor de Linea", item.product.price+item.line_total)
         print (item.quantity,item.product.desc, ":", format(item.product.price + item.line_total, '.2f'))
         total_tax  += item.line_total
         suma_total +=  item.product.price + item.line_total
     print ("Impuestos:", format(total_tax, '.2f'))
     print("Total:", format(suma_total, '.2f'))
-#    print ("Impuestos:", total_tax)
-#    print("Total:", suma_total)
-    
-# rutina ingrese productos CRUD Database
 
+    
 ######### Harcoded Data Set #########
 def main():
     libro = Product("libro",12.49, False , True)
@@ -87,7 +82,6 @@ def main():
     factura.append( Register('1', pastillas))
     factura.append( Register('1', bombones_import))
     
-    # Register.sale_print = staticmethod(Register.sale_print)
     ######### OUTPUT 1 #########
     sale_print(factura[:3])
     ######### OUTPUT 2 #########
