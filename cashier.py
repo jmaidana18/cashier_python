@@ -163,22 +163,6 @@ main()
     - List() es legible
     - List()-> list[1] -> single object list-> comete errores en subrutinas, cuando copia una referencia a Register()
 """
-"""
-1 libro : 12.49
-1 pelicula en DVD : 16.49
-1 barrita de chocolate : 0.85
-Impuestos: 1.50
-Total: 29.83
-
-1 caja de bombones de importación : 10.50
-1 frasco de perfurme de importación : 54.65
-Impuestos: 7.65
-Total: 65.15
-
-1 frasco de perfume de importación : 32.19
-1 frasco de perfurme  : 20.89
-1 caja de pastillas para el estómago  : 9.75
-1 caja de bombones importados : 11.85
-Impuestos: 6.70
-Total: 74.68
+""" Ejecutar Tests:
+    python -m doctest -v cashier.py
 """
