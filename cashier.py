@@ -1,5 +1,3 @@
-# Testing - Doc Tests()
-
 from decimal import *
 import numpy as np
 import doctest
@@ -150,26 +148,37 @@ def main():
     ######### OUTPUT 3 #########
     print("")
     sale_print(factura[5:9])
-    
-    
+    # Test
     doctest.testmod()
+    
 main()
 
 ######### Comentario sobre Estructuras Usadas #########
-""" Para referir una coleccion de objetos Register() es mas sencillo escribir
-    una coleccion list(), en terminos de legibilidad.
+"""
+    Dict() vs List() 
     
-    Escribir codigo para dict() se complica al iterar la estructura en las distintas subrutinas
-    probadas, al hacer referencias, se necesitan muchos accesos ilegibles en codigo.
+    - Dict tiene mejor performance
+    - En nuestro caso, usar Dict() vuelve codigo ilegible.
     
-    Sin embargo, al ejecutar tests, una factura podria consistir de un solo objeto lista de Register(),
-    y las estructuras de datos que lidian en las subrutinas con los objetos, esperan una lista.
-    
-    Un simple elemento de lista se puede referir asi: lista[0], sin embargo, esto envia a las subrutinas
-    una copia del contenido (en nuestro caso, un objeto de tipo Register()).
-    
-    Adicionalmente, un diccionario tiene mejor rendimiento que una lista, computacionalmente.
-    
-    El sacrificio hecho en el codigo, es de rendimiento por legibilidad.
-    
-    """
+    - List() es legible
+    - List()-> list[1] -> single object list-> comete errores en subrutinas, cuando copia una referencia a Register()
+"""
+"""
+1 libro : 12.49
+1 pelicula en DVD : 16.49
+1 barrita de chocolate : 0.85
+Impuestos: 1.50
+Total: 29.83
+
+1 caja de bombones de importación : 10.50
+1 frasco de perfurme de importación : 54.65
+Impuestos: 7.65
+Total: 65.15
+
+1 frasco de perfume de importación : 32.19
+1 frasco de perfurme  : 20.89
+1 caja de pastillas para el estómago  : 9.75
+1 caja de bombones importados : 11.85
+Impuestos: 6.70
+Total: 74.68
+"""
